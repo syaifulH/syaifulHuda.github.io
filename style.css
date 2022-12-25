@@ -1,0 +1,515 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: oswald;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+	text-decoration: none;
+}
+
+.circle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid #2b3241;
+    animation: wave 0.8s forwards;
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffffff;
+}
+
+.mobile-menu{
+	float: right;
+    position:absolute;
+    right: 3%;
+	display: none;
+	padding: 18px;
+}
+.mobile-menu:hover {
+	cursor: pointer;
+}
+#check{
+	display: none ;
+}
+
+.sidebar{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: -300px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.795);
+	transition: .3s;
+	z-index: 9999;
+}
+.sidebar ul li a{
+	color: #fff;
+}
+.sidebar ul li{
+	padding: 24px;
+	transition: .3s;
+	transition-property: background-color;
+}
+.sidebar ul li:hover {
+	background-color: #878787;
+}
+#check:checked ~ .sidebar {
+	left: 0;
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    width: 100%;
+}
+
+.header h1{
+    position: relative;
+    top: 5px;
+    left: 2%;
+    animation-name: judul;
+    animation-duration: 3s;
+    animation-delay: 7ms;
+}
+
+.nav{
+    position: absolute;
+    float: right;
+    right: 0%;
+    top: 0%;
+    animation-name: navi;
+    animation-duration: 3s;
+    animation-delay: 7ms;
+}
+
+.nav li{
+    position: relative;
+    display: inline;
+    float: right;
+    top: 0px;
+    margin: 0px;
+    padding: 15px;
+}
+
+.nav a li:hover{
+    background-color: #878787;
+}
+
+@keyframes wave {
+    0% {
+        width: 5px;
+        height: 5px;
+        opacity: 1;
+    }
+    90% {
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+}
+
+@keyframes masuk {
+    from {left: -50%;}
+    to {right: 50%;}
+}
+
+@keyframes judul {
+    from {left: -50%;}
+    to {right: 50%;}
+}
+
+@keyframes navi {
+    from {right: -50%;}
+    to {left: 50%;}
+}
+
+@media (max-width: 768px) {
+    .mobile-menu{
+		display: block;
+	}
+	.nav li{
+		display: none;
+	}
+}
+
+/*home*/
+.container{
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    left: 10%;
+    animation-name: masuk;
+    animation-duration: 3s;
+    animation-delay: 7ms;
+}
+
+.say {
+    position: relative;
+    top: 50%;
+}
+.anim{
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    right: 30%;
+}
+
+.anim .putih{
+        width: 250px;
+        height: 250px;
+        transform: rotate(90deg);
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        animation-name: muterki;
+        animation-duration: 0.10s;
+        animation: muterki linear 5s forwards;
+        animation-iteration-count: infinite;
+        box-sizing: content-box;
+}
+
+.anim .hitam{
+    width: 250px;
+    height: 250px;
+    transform: rotate(90deg);
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    animation-name: muterka;
+    animation-duration: 0.10s;
+    animation: muterka linear 5s forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes muterka {
+    0%   {transform: rotate(90deg);}
+    100% {transform: rotate(-90deg);}
+}
+
+@keyframes muterki {
+    0%   {transform: rotate(-90deg);}
+    100% {transform: rotate(90deg);}
+}
+
+/*contact*/
+
+h1{
+	font-weight: 200px;
+	color: white;
+}
+
+input[type="text"], input[type="email"], textarea{
+	margin: 0px;
+	width: 100%;
+	height: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+    color: black;
+    outline: 0;
+    transition: border 0.15s;
+}
+
+.wrap{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 500px;
+	height: 500px;
+    animation-name: wrap;
+    animation-duration: 2s;
+    animation-delay: 5ms;
+}
+
+.box{
+	position: absolute;
+	padding: 20px 40px;
+	border: 1px solid;
+    width: 60%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.box label{
+    display: block;
+    margin: 2px;
+}
+
+.box textarea{
+    resize: vertical;
+    height: 120px;
+}
+
+.kirim{
+    background: #2b3241;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+}
+.kirim:hover{
+    background: #232731;
+}
+
+.socmed{
+    position: absolute;
+    bottom: 50px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.go{
+    position: relative;
+    top: 10px;
+    left: 80%;
+	transform: translate(-50%,-50%);
+}
+
+.fab{
+    width: 30px;
+}
+
+.socmed h4{
+    letter-spacing: 1px;
+    position: relative;
+}
+
+@keyframes wrap{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+/*About*/
+.about{
+	position: absolute;
+	padding: 20px 40px;
+	border: 1px solid;
+    width: 60%;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.about h2{
+    left: 54%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color:#878787;
+    margin-bottom: 5%;
+}
+
+.abt{
+    text-indent: 30px;
+    position: relative;
+    text-align: justify;
+    color: #878787;
+}
+
+.usr{
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.usr a{
+    display: flex;
+}
+
+.usr a:hover{
+    transform: scale(1.05);
+    transition: 80ms;
+}
+
+.about .usr img{
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.about .usr h3{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
+
+.about .usr span{
+    font-size: 0.8rem;
+    color:#878787;
+    letter-spacing: 1px;
+}
+
+/*experience*/
+section h3 {
+	padding-bottom: 20px;
+	text-align: center;
+	margin: 20px;
+	position: relative;
+}
+
+.exp{
+    position: absolute;
+    align-items: center;
+    top: 10%;
+}
+
+
+.col-4 {
+	width: 25%;
+	box-sizing: border-box;
+	padding: 5px;
+	float: left;
+	text-align: center;
+	margin-bottom: 10px;
+}
+span{
+    display: block;
+}
+.col-4 img {
+	width: 80%;
+}
+.col-4 a:hover img {
+	transform: scale(1.1);
+}
+
+/*Skills*/
+#skills{
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    width: 90%;
+}
+
+#skills .bar {
+	height: 30px;
+	background: none;
+	border: 1px solid #ddd;
+	margin: 5px 0 20px 0;
+
+}
+.bar .nilai {
+	height: 30px;
+	background-color:#232731;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+}
+.nilai span {
+	color: #fff;
+}
+.html {
+	width: 80%;
+    animation-name: phtml;
+    animation-duration: 1.2s;
+}
+.css {
+	width: 70%;
+    animation-name: pcss;
+    animation-duration: 1.2s;
+}.javascript {
+	width: 70%;
+    animation-name: pjs;
+    animation-duration: 1.2s;
+}
+.php {
+	width: 70%;
+    animation-name: pphp;
+    animation-duration: 1.2s;
+}
+.CD {
+	width: 80%;
+    animation-name: pCD;
+    animation-duration: 1.2s;
+}
+
+@keyframes phtml{
+    from{width: 0%;}
+    to{width: 80%;}
+}
+
+@keyframes pcss{
+    from{width: 0%;}
+    to{width: 70%;}
+}
+
+@keyframes pjs{
+    from{width: 0%;}
+    to{width: 70%;}
+}
+
+@keyframes pphp{
+    from{width: 0%;}
+    to{width: 70%;}
+}
+
+@keyframes pCD{
+    from{width: 0%;}
+    to{width: 80%;}
+}
+
+/*Profile*/
+.profil{
+    border: 1px solid;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pp{
+    width: 200px;
+}
+h2{
+    position: relative;
+    left: 30%;
+}
+.kotak{
+    position: relative;
+    display: flex;
+    width: 80%;
+    left: 10%;
+    margin-top: 40px;
+}
+.prfl{
+    display: flex;
+    margin: 15px;
+}
+.pp{
+    position: relative;
+    top: 15%;
+}
+.isi{
+    width: 50%;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+}
+
+.menuju{
+    margin-left: 10px;
+    color: rgb(119, 119, 126);
+}
+
+.menuju:hover{
+    color: #ffffff;
+}
